@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/flaxes/flaks-game-launcher#readme",
     "dependencies": {
-        "express": "^5.1.0"
+        "express": "^5.1.0",
+        "trayicon": "^1.2.2"
     }
 }
