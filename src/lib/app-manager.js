@@ -26,6 +26,11 @@ class AppManager {
 
         const error = new Error();
 
+        if (pathToExe.endsWith(".bat")) {
+            args.unshift('/k', pathToExe);
+            pathToExe = "cmd";
+        }
+
         return new Promise((resolve, reject) => {
             let isResolved = false;
 
