@@ -30,8 +30,8 @@ class LinksManager {
         /** @readonly */
         this.updateIntervalMs = updateIntervalMs;
 
-        /** @private */
-        this.data = null;
+        /** @private @type {Record<string, LinkTargetInfo>} */
+        this.data = {};
         /** @type {NodeJS.Timeout | null} */
         this.timeout = null;
     }
@@ -52,11 +52,18 @@ class LinksManager {
 
         try {
             const links = await this.getLinks();
-            const linkNames = links.map((item) => item.Name);
+
+            /** @type {Record<string, LinkTargetInfo>} */
+            const data = {};
+
+            const linkNames = links.map((item) => {
+                data[item.Name] = item;
+                return item.Name;
+            });
 
             await this.checkIcons(linkNames);
 
-            this.data = links;
+            this.data = data;
         } catch (err) {
             console.error("OnUpdate", err);
         } finally {

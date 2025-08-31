@@ -5,3 +5,8 @@ declare interface LinkTargetInfo {
     Arguments: string;
     WorkingDir: string;
 }
+
+declare interface LinkLaunched {
+    alias: string;
+    pid: number;
+}
