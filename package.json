@@ -21,5 +21,8 @@
     "bugs": {
         "url": "https://github.com/flaxes/flaks-game-launcher/issues"
     },
-    "homepage": "https://github.com/flaxes/flaks-game-launcher#readme"
+    "homepage": "https://github.com/flaxes/flaks-game-launcher#readme",
+    "dependencies": {
+        "express": "^5.1.0"
+    }
 }

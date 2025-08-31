@@ -2,14 +2,20 @@ const { execFile } = require("child_process");
 const nodePath = require("path");
 const fs = require("fs");
 const pc = process.cwd();
+const pathToUtility = nodePath.resolve(__dirname, "./extract-icon.exe");
 
 function extractIcon(exePath, resultPath) {
     const exeAbsolutePath = nodePath.resolve(pc, exePath);
     const resultAbsolutePath = nodePath.resolve(pc, resultPath);
+    const stack = new Error().stack;
 
     return new Promise((resolve, reject) => {
-        execFile("extract-icon.exe", [exeAbsolutePath, resultAbsolutePath], (err, stdout) => {
-            if (err) return reject(err);
+        execFile(pathToUtility, [exeAbsolutePath, resultAbsolutePath], (err, stdout) => {
+            if (err) {
+                err.stack = stack;
+
+                return reject(err);
+            }
 
             resolve(stdout);
         });
@@ -17,11 +23,13 @@ function extractIcon(exePath, resultPath) {
 }
 
 function extractIconToBase64(exePath) {
-    const exeAbsolutePath = nodePath.resolve(pc, exePath);
-    const resultAbsolutePath = nodePath.resolve(pc, `./temp_${Date.now()}.png`);
+    const q = (item) => `"${item}"`;
+
+    const exeAbsolutePath = q(nodePath.resolve(pc, exePath));
+    const resultAbsolutePath = q(nodePath.resolve(pc, `./temp_${Date.now()}.png`));
 
     return new Promise((resolve, reject) => {
-        execFile("extract-icon.exe", [exeAbsolutePath, resultAbsolutePath], (err) => {
+        const pc = execFile(pathToUtility, [exeAbsolutePath, resultAbsolutePath], (err) => {
             if (err) return reject(err);
 
             const finish = () => fs.rmSync(resultAbsolutePath);
@@ -36,6 +44,8 @@ function extractIconToBase64(exePath) {
                 resolve(data);
             });
         });
+
+        pc.on("error", (err) => reject(err));
     });
 }
 

@@ -83,7 +83,7 @@ class LinksManager {
      * @param {string} lnk
      */
     async createIcon(linkPath, lnk) {
-        const result = await extractIcon(linkPath, `${this.iconsDirectory}/${lnk}.png`);
+        const result = await extractIcon(linkPath, `${this.iconsDirectory}\\${lnk}.png`);
 
         return result;
     }
@@ -110,11 +110,11 @@ class LinksManager {
                 continue;
             }
 
-            fs.rmSync(`${this.iconsDirectory}/${icon}`);
+            fs.rmSync(`${this.iconsDirectory}\\${icon}`);
         }
 
         for (const lnk of iconsToCreate) {
-            const lnkPath = `${this.linksDirectory}/${lnk}`;
+            const lnkPath = `${this.linksDirectory}\\${lnk}`;
 
             await this.createIcon(lnkPath, lnk);
         }
