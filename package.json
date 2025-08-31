@@ -1,17 +1,25 @@
 {
-  "name": "flaks-game-launcher",
-  "version": "1.0.0",
-  "description": "Web game-launcher for Windows",
-  "main": "index.js",
-  "scripts": {
-    "test": "node ./test.js"
-  },
-  "keywords": [
-    "flaks",
-    "games",
-    "launcher",
-    "windows"
-  ],
-  "author": "Jack",
-  "license": "MIT"
+    "name": "flaks-game-launcher",
+    "version": "1.0.0",
+    "description": "Web game-launcher for Windows",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./test.js"
+    },
+    "keywords": [
+        "flaks",
+        "games",
+        "launcher",
+        "windows"
+    ],
+    "author": "Jack",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/flaxes/flaks-game-launcher.git"
+    },
+    "bugs": {
+        "url": "https://github.com/flaxes/flaks-game-launcher/issues"
+    },
+    "homepage": "https://github.com/flaxes/flaks-game-launcher#readme"
 }

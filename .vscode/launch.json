@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/src/index.js",
+            "outFiles": ["${workspaceFolder}/src/**/*.js"],
+            "outputCapture": "std",
+            "console": "integratedTerminal",
+            "env": {
+                "DEBUG": "true",
+                "LOG_LEVEL": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Current File",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${file}",
+            "outFiles": ["${workspaceFolder}/**/*.js"],
+            "outputCapture": "std",
+            "console": "integratedTerminal",
+            "env": {
+                "DEBUG": "true",
+                "LOG_LEVEL": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch test.js",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/test.js",
+            "outFiles": ["${workspaceFolder}/**/*.js"],
+            "outputCapture": "std",
+            "console": "integratedTerminal",
+            "env": {
+                "DEBUG": "true",
+                "LOG_LEVEL": "debug"
+            }
+        }
+    ]
+}
