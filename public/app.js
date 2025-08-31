@@ -24,7 +24,7 @@ function renderLinks(links) {
     }
 
     const launch = (link) => {
-        launchLinkReq(link).then(() => wait(1e3).then(updateLinks));
+        launchLinkReq(link).then(() => wait(100).then(updateLinks));
     };
 
     dom.querySelectorAll(".link-container").forEach((el) => {
@@ -55,7 +55,7 @@ function renderLaunchedLinks(links) {
     dom.parentElement.removeAttribute("hidden");
 
     const closeLink = (pid) => {
-        closeLinkReq(pid).then(() => wait(1e3).then(updateLinks));
+        closeLinkReq(pid).then(() => wait(100).then(updateLinks));
     };
 
     for (const link of links) {
