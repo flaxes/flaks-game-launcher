@@ -1,0 +1,17 @@
+{
+  "name": "flaks-game-launcher",
+  "version": "1.0.0",
+  "description": "Web game-launcher for Windows",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "keywords": [
+    "flaks",
+    "games",
+    "launcher",
+    "windows"
+  ],
+  "author": "Jack",
+  "license": "MIT"
+}
