@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "es2024",
+        "lib": ["es2024", "DOM"],
+        "checkJs": true,
+        "strictNullChecks": true,
+        "skipLibCheck": true,
+        "outDir": "./build"
+    },
+    "include": ["*.js", "../types/**/*"],
+    "exclude": ["build"]
+}

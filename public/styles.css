@@ -1,0 +1,92 @@
+body {
+    background-color: #1a003d;
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+footer {
+    padding-top: 32px;
+}
+
+footer a {
+    color: #fff;
+}
+
+h1 {
+    font-size: large;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+
+    flex-direction: row;
+    justify-content: center;
+}
+
+.current-link-text,
+.available-link-text {
+    margin-bottom: 12px;
+}
+
+#current-links {
+    max-width: 80%;
+    min-width: 20%;
+    align-self: center;
+    margin-bottom: 20px;
+
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(118, 0, 253, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(118, 0, 253, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#current-links h3 {
+    align-self: center;
+}
+
+#close-current-button {
+    width: 128px;
+    height: 32px;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(118, 0, 253, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(118, 0, 253, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5), 0 0 0 2px rgba(118, 0, 253, 0.5);
+}
+
+.link-image {
+    width: 128px;
+    height: 128px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.link-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
